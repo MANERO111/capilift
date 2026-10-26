@@ -14,6 +14,7 @@ import {
   Phone,
   MapPin,
 } from "lucide-react";
+import Footer from "@/components/Footer";
 
 interface Article {
   id: string;
@@ -365,14 +366,12 @@ export default function ArticlesConseilsPage() {
           </div>
         </section>
 
-        {/* ============================================================== */}
-        {/* 7. DEDICATED DARK FOOTER MATCHING THE SCREENSHOT EXACTLY       */}
-        {/* ============================================================== */}
-        <footer className="bg-[#070b16] text-white pt-16 pb-10 border-t border-white/5">
+        <Footer />
+        {/* <footer className="bg-[#070b16] text-white pt-16 pb-10 border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
               
-              {/* Col 1: Brand & Bio */}
+              
               <div className="space-y-4">
                 <Link href="/" className="inline-block">
                   <div className="text-2xl font-extrabold tracking-wider text-white font-[family-name:var(--font-playfair)]">
@@ -385,7 +384,7 @@ export default function ArticlesConseilsPage() {
                 <p className="text-xs text-slate-400 leading-relaxed">
                   Des solutions capillaires expertes qui allient science, innovation et performance pour des cheveux plus forts, plus sains et plus beaux.
                 </p>
-                {/* Social icons */}
+                
                 <div className="flex items-center space-x-3 pt-2">
                   <a
                     href="#instagram"
@@ -428,7 +427,7 @@ export default function ArticlesConseilsPage() {
                 </div>
               </div>
 
-              {/* Col 2: Nos Gammes */}
+              
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
                   Nos Gammes
@@ -452,7 +451,7 @@ export default function ArticlesConseilsPage() {
                 </ul>
               </div>
 
-              {/* Col 3: Informations */}
+              
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
                   Informations
@@ -481,7 +480,7 @@ export default function ArticlesConseilsPage() {
                 </ul>
               </div>
 
-              {/* Col 4: Besoin d'aide ? */}
+              
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
                   Besoin d&apos;aide ?
@@ -510,7 +509,7 @@ export default function ArticlesConseilsPage() {
                 </ul>
               </div>
 
-              {/* Col 5: Nous Contacter */}
+              
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white mb-4">
                   Nous Contacter
@@ -533,13 +532,13 @@ export default function ArticlesConseilsPage() {
 
             </div>
 
-            {/* Bottom copyright line */}
+            
             <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-500 space-y-2 sm:space-y-0">
               <p>© 2024 Capi-Lift – ICG Group. Tous droits réservés.</p>
               <p>Conçu avec passion au service de vos cheveux.</p>
             </div>
           </div>
-        </footer>
+        </footer> */}
 
       </main>
     </div>
