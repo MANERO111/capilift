@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* 1. Header / Navbar */}
-      <Navbar />
+      <Navbar theme="dark" />
 
       <main className="flex-1">
         {/* 2. Hero Section with Background image & scientific aesthetic */}

@@ -2,35 +2,24 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Search, User, ShoppingBag, Menu, X, ChevronDown, Truck } from "lucide-react";
+import { Menu, X, ChevronDown, Truck } from "lucide-react";
 
 interface NavbarProps {
   theme?: "light" | "dark";
   activePage?: "accueil" | "gammes" | "routines" | "science" | "conseils" | "apropos" | "articles";
 }
 
-export default function Navbar({ theme = "light", activePage }: NavbarProps) {
+export default function Navbar({ theme = "dark", activePage }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [gammeDropdownOpen, setGammeDropdownOpen] = useState(false);
 
-  const isDark = theme === "dark";
+  // Always dark as requested
+  const isDark = true;
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-colors duration-300 ${
-        isDark
-          ? "bg-[#080d19]/90 backdrop-blur-md text-white border-b border-white/10"
-          : "bg-white/95 backdrop-blur-md text-slate-800 border-b border-slate-100 shadow-xs"
-      }`}
-    >
+    <header className="sticky top-0 z-50 w-full transition-colors duration-300 bg-[#080d19]/90 backdrop-blur-md text-white border-b border-white/10">
       {/* Top Notification Banner */}
-      <div
-        className={`text-[11px] sm:text-xs py-2 px-4 border-b ${
-          isDark
-            ? "bg-[#040711] text-slate-300 border-white/10"
-            : "bg-[#0f172a] text-slate-200 border-slate-800"
-        }`}
-      >
+      <div className="text-[11px] sm:text-xs py-2 px-4 border-b bg-[#040711] text-slate-300 border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between font-medium tracking-wide">
           <div className="flex items-center space-x-2">
             <Truck className="w-3.5 h-3.5 text-blue-400" />
@@ -62,21 +51,13 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav
-            className={`hidden lg:flex items-center space-x-8 font-semibold text-[13px] tracking-wider uppercase ${
-              isDark ? "text-slate-200" : "text-slate-700"
-            }`}
-          >
+          <nav className="hidden lg:flex items-center space-x-8 font-semibold text-[13px] tracking-wider uppercase text-slate-200">
             <Link
               href="/"
               className={`pb-1 transition-all ${
                 activePage === "accueil"
-                  ? isDark
-                    ? "text-white border-b-2 border-white font-bold"
-                    : "text-[#1e3a8a] border-b-2 border-[#1e3a8a] font-bold"
-                  : isDark
-                  ? "hover:text-white"
-                  : "hover:text-[#1e3a8a]"
+                  ? "text-white border-b-2 border-white font-bold"
+                  : "hover:text-white"
               }`}
             >
               Accueil
@@ -91,12 +72,8 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
                 href="/nos-gammes"
                 className={`flex items-center space-x-1 pb-1 uppercase font-medium cursor-pointer transition-colors ${
                   activePage === "gammes"
-                    ? isDark
-                      ? "text-white border-b-2 border-white font-bold"
-                      : "text-[#1e3a8a] border-b-2 border-[#1e3a8a] font-bold"
-                    : isDark
-                    ? "hover:text-white"
-                    : "hover:text-[#1e3a8a]"
+                    ? "text-white border-b-2 border-white font-bold"
+                    : "hover:text-white"
                 }`}
               >
                 <span>Nos Gammes</span>
@@ -109,50 +86,28 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
 
               {/* Submenu Dropdown */}
               {gammeDropdownOpen && (
-                <div
-                  className={`absolute top-full left-0 w-64 rounded-xl shadow-2xl py-3 px-2 border transition-all animate-in fade-in slide-in-from-top-2 duration-150 ${
-                    isDark
-                      ? "bg-[#0c1426] border-white/10 text-slate-200"
-                      : "bg-white border-slate-100 text-slate-700"
-                  }`}
-                >
+                <div className="absolute top-full left-0 w-64 rounded-xl shadow-2xl py-3 px-2 border transition-all animate-in fade-in slide-in-from-top-2 duration-150 bg-[#0c1426] border-white/10 text-slate-200">
                   <Link
                     href="/nos-gammes#coloration"
-                    className={`block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition ${
-                      isDark
-                        ? "hover:bg-white/10 hover:text-white"
-                        : "hover:bg-blue-50 hover:text-[#1e3a8a]"
-                    }`}
+                    className="block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition hover:bg-white/10 hover:text-white"
                   >
                     01. Coloration Capi-Lift
                   </Link>
                   <Link
                     href="/nos-gammes#shampooing"
-                    className={`block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition ${
-                      isDark
-                        ? "hover:bg-white/10 hover:text-white"
-                        : "hover:bg-blue-50 hover:text-[#1e3a8a]"
-                    }`}
+                    className="block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition hover:bg-white/10 hover:text-white"
                   >
                     02. Shampooing Anti-Chute
                   </Link>
                   <Link
                     href="/nos-gammes#lotion"
-                    className={`block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition ${
-                      isDark
-                        ? "hover:bg-white/10 hover:text-white"
-                        : "hover:bg-blue-50 hover:text-[#1e3a8a]"
-                    }`}
+                    className="block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold transition hover:bg-white/10 hover:text-white"
                   >
                     03. Lotion Anti-Chute
                   </Link>
                   <Link
                     href="/nos-gammes"
-                    className={`block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold border-t mt-1 ${
-                      isDark
-                        ? "border-white/10 hover:bg-white/10 text-blue-300"
-                        : "border-slate-100 hover:bg-blue-50 text-[#1e3a8a]"
-                    }`}
+                    className="block px-4 py-2.5 text-xs uppercase tracking-wider rounded-lg font-semibold border-t mt-1 border-white/10 hover:bg-white/10 text-blue-300"
                   >
                     Voir les 3 gammes expertes →
                   </Link>
@@ -164,12 +119,8 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
               href="/routines"
               className={`pb-1 uppercase font-medium transition-colors ${
                 activePage === "routines"
-                  ? isDark
-                    ? "text-white border-b-2 border-white font-bold"
-                    : "text-[#1e3a8a] border-b-2 border-[#1e3a8a] font-bold"
-                  : isDark
-                  ? "hover:text-white"
-                  : "hover:text-[#1e3a8a]"
+                  ? "text-white border-b-2 border-white font-bold"
+                  : "hover:text-white"
               }`}
             >
               Routines
@@ -179,7 +130,7 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
               href="/#science"
               className={`hover:opacity-90 transition-colors ${
                 activePage === "science" ? "font-bold border-b-2" : ""
-              } ${isDark ? "hover:text-white" : "hover:text-[#1e3a8a]"}`}
+              } hover:text-white`}
             >
               Notre Science
             </Link>
@@ -188,22 +139,18 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
               href="/articles-conseils"
               className={`pb-1 uppercase font-medium transition-colors ${
                 activePage === "conseils"
-                  ? isDark
-                    ? "text-white border-b-2 border-white font-bold"
-                    : "text-[#1e3a8a] border-b-2 border-[#1e3a8a] font-bold"
-                  : isDark
-                  ? "hover:text-white"
-                  : "hover:text-[#1e3a8a]"
+                  ? "text-white border-b-2 border-white font-bold"
+                  : "hover:text-white"
               }`}
             >
               Conseils
             </Link>
 
             <Link
-              href="/#a-propos"
+              href="/a-propos"
               className={`hover:opacity-90 transition-colors ${
-                activePage === "apropos" ? "font-bold border-b-2" : ""
-              } ${isDark ? "hover:text-white" : "hover:text-[#1e3a8a]"}`}
+                activePage === "apropos" ? "text-white border-b-2 border-white font-bold" : ""
+              } hover:text-white`}
             >
               À Propos
             </Link>
@@ -212,58 +159,27 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
               href="/articles-conseils"
               className={`pb-1 uppercase font-medium transition-colors ${
                 activePage === "articles"
-                  ? isDark
-                    ? "text-white border-b-2 border-white font-bold"
-                    : "text-[#1e3a8a] border-b-2 border-[#1e3a8a] font-bold"
-                  : isDark
-                  ? "hover:text-white"
-                  : "hover:text-[#1e3a8a]"
+                  ? "text-white border-b-2 border-white font-bold"
+                  : "hover:text-white"
               }`}
             >
               Articles
             </Link>
           </nav>
 
-          {/* Action Icons */}
-          <div
-            className={`flex items-center space-x-5 ${
-              isDark ? "text-slate-200" : "text-slate-700"
-            }`}
-          >
-            <button
-              aria-label="Recherche"
-              className={`p-1.5 rounded-full transition cursor-pointer ${
-                isDark ? "hover:bg-white/10 hover:text-white" : "hover:bg-slate-100 hover:text-[#1e3a8a]"
-              }`}
+          {/* Right Action Area - Mobile menu trigger */}
+          <div className="flex items-center space-x-4">
+            <Link
+              href="/a-propos"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 transition-all shadow-md shadow-blue-900/30"
             >
-              <Search className="w-5 h-5 stroke-[1.8]" />
-            </button>
-            <button
-              aria-label="Compte utilisateur"
-              className={`p-1.5 rounded-full transition cursor-pointer ${
-                isDark ? "hover:bg-white/10 hover:text-white" : "hover:bg-slate-100 hover:text-[#1e3a8a]"
-              }`}
-            >
-              <User className="w-5 h-5 stroke-[1.8]" />
-            </button>
-            <button
-              aria-label="Panier d'achat"
-              className={`p-1.5 rounded-full transition relative cursor-pointer ${
-                isDark ? "hover:bg-white/10 hover:text-white" : "hover:bg-slate-100 hover:text-[#1e3a8a]"
-              }`}
-            >
-              <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
-              <span className="absolute top-0 right-0 bg-blue-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">
-                0
-              </span>
-            </button>
+              Découvrir Capi-Lift
+            </Link>
 
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`lg:hidden p-1.5 rounded-lg focus:outline-none ${
-                isDark ? "hover:bg-white/10 text-white" : "hover:bg-slate-100 text-slate-700"
-              }`}
+              className="lg:hidden p-2 rounded-lg focus:outline-none hover:bg-white/10 text-white cursor-pointer"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -318,7 +234,7 @@ export default function Navbar({ theme = "light", activePage }: NavbarProps) {
               Conseils
             </Link>
             <Link
-              href="/#a-propos"
+              href="/a-propos"
               onClick={() => setMobileMenuOpen(false)}
               className="hover:opacity-80 py-1"
             >

@@ -124,22 +124,22 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
               <li>
-                <Link href="#a-propos" className="hover:text-[#1e3a8a] hover:underline transition">
+                <Link href="/a-propos" className="hover:text-[#1e3a8a] hover:underline transition">
                   Notre Histoire
                 </Link>
               </li>
               <li>
-                <Link href="#science" className="hover:text-[#1e3a8a] hover:underline transition">
+                <Link href="/#science" className="hover:text-[#1e3a8a] hover:underline transition">
                   Notre Science
                 </Link>
               </li>
               <li>
-                <Link href="#engagements" className="hover:text-[#1e3a8a] hover:underline transition">
+                <Link href="/a-propos#valeurs" className="hover:text-[#1e3a8a] hover:underline transition">
                   Nos Engagements
                 </Link>
               </li>
               <li>
-                <Link href="#salons" className="hover:text-[#1e3a8a] hover:underline transition">
+                <Link href="/a-propos#faq" className="hover:text-[#1e3a8a] hover:underline transition">
                   Espace Salons & Professionnels
                 </Link>
               </li>
